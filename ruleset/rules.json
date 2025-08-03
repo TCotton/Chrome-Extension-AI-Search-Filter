@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "\\1\\2&q=\\3+-ai"
+      }
+    },
+    "condition": {
+      "regexFilter": "^(https?://www\\.google\\.com/search\\?)(.*)(&q=([^&]+))",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

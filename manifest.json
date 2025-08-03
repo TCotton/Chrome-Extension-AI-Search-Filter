@@ -1,15 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "API AI Search Filter",
+  "name": "AI Search Filter",
   "version": "1.0",
-  "description": "Uses the chrome.webRequest API to add '-ai' to Google search queries.",
+  "description": "Uses the declarativeNetRequest API to add '-ai' to Google search queries.",
   "permissions": [
-    "webRequest"
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
   ],
   "host_permissions": [
-    "*://www.google.com/search?*"
+    "*://www.google.com/*"
   ],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "ruleset/rules.json"
+    }]
+  },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "js/service-worker.js",
+    "type": "module"
   }
 }
