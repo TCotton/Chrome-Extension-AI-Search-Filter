@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "API AI Search Filter",
+  "version": "1.0",
+  "description": "Uses the chrome.webRequest API to add '-ai' to Google search queries.",
+  "permissions": [
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://www.google.com/search?*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
